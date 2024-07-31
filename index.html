@@ -124,7 +124,7 @@
 		params = new URLSearchParams(window.location.search);
 		date = (params.has('d')) ? moment(params.get('d')) : moment();
 
-		if(date.isBefore(moment().subtract(90, 'day').format('YYYY-MM-DD')) || date.isAfter(moment().add(90, 'days'))) {
+		if(date.isBefore(moment().subtract(750, 'day').format('YYYY-MM-DD')) || date.isAfter(moment().add(90, 'days'))) {
 			date = moment();
 		}
 
@@ -182,13 +182,13 @@
 				format: 'yyyy-mm-dd',
 				language: 'pl',
 				todayBtn: 'linked',
-				startDate: moment().subtract(90, 'day').format('YYYY-MM-DD'),
+				startDate: moment().subtract(750, 'day').format('YYYY-MM-DD'),
 				endDate: '+3m'
 			});
 
 			datePicker.on('changeDate', function(e){
 				date = moment(e.date);
-				if(date.isBefore(moment().subtract(90, 'day').format('YYYY-MM-DD')) || date.isAfter(moment().add(3, 'months'))) {
+				if(date.isBefore(moment().subtract(750, 'day').format('YYYY-MM-DD')) || date.isAfter(moment().add(3, 'months'))) {
 					date = moment();
 					datePicker.datepicker('update', date.format('YYYY-MM-DD'));
 				}
